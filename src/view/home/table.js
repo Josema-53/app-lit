@@ -39,17 +39,17 @@ class Table extends LitElement {
             }
 
             th {
-                background-color: #3300ff;
+                background-color: #2e7d32;
                 color: white;
                 font-weight: bold;
             }
 
             tbody tr:nth-child(even) {
-                background-color: #f5f6ff;
+                background-color: #f1f8f1;
             }
 
             tbody tr:hover {
-                background-color: #e5e3ff;
+                background-color: #dcefdc;
             }
 
             tbody tr:last-child td {
@@ -65,13 +65,13 @@ class Table extends LitElement {
 
     render() {
         return html`
-            <h1>Tabla de registros</h1>
+            <h1>Catálogo de bebidas</h1>
           <table>
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Edad</th>
+                    <th>Bebida</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
                 </tr>
             </thead>
             <tbody>
@@ -80,8 +80,8 @@ class Table extends LitElement {
                             return html`
                                 <tr>
                                     <td>${element.nombre}</td>
-                                    <td>${element.apellido}</td>
-                                    <td>${element.edad}</td>
+                                    <td>${element.categoria}</td>
+                                    <td>$${Number(element.precio).toFixed(2)}</td>
                                   </tr>
                             `;
                         })

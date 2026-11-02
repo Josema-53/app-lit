@@ -4,29 +4,29 @@ import "./register";
 class Home extends LitElement {
     static get properties() {
         return {
-            studentlist: { type: Array }
+            bebidas: { type: Array }
         };
     }
     constructor() {
         super();
-         this.studentlist=[
-            {nombre:"Ian", apellido:"Escobar", edad:20},
-            {nombre:"Juan", apellido:"Perez", edad:30},
-            {nombre:"Maria", apellido:"Gomez", edad:25}
+        this.bebidas = [
+            { nombre: "Té verde con limón", categoria: "Té", precio: 1.50 },
+            { nombre: "Hidratante de maracuyá", categoria: "Bebida hidratante", precio: 1.25 },
+            { nombre: "Jugo de naranja", categoria: "Jugo natural", precio: 2.00 }
         ];
     }
-    addlist(event){
-        const student = {
-            nombre: event.detail.name,
-            apellido: event.detail.lastName,
-            edad: event.detail.age
+    addBebida(event) {
+        const bebida = {
+            nombre: event.detail.nombre,
+            categoria: event.detail.categoria,
+            precio: Number(event.detail.precio)
         };
-        this.studentlist = [...this.studentlist, student];
+        this.bebidas = [...this.bebidas, bebida];
     }
     render() {
         return html`
-        <wc-form-register @registerStudent=${this.addlist}></wc-form-register>
-        <wc-table .list=${this.studentlist}></wc-table>
+        <wc-form-register @registerBebida=${this.addBebida}></wc-form-register>
+        <wc-table .list=${this.bebidas}></wc-table>
         `;
     }
 }
