@@ -91,3 +91,9 @@ Se verificó el funcionamiento integral en `http://localhost:5173/integracion.ht
 - **Desacoplamiento efectivo:** Se comprobó que el estándar de Web Components y la reactividad de Lit permiten integrar módulos desarrollados por equipos independientes sin compartir estado global ni dependencias cruzadas.
 - **Patrón Adaptador:** La capa de adaptación en el componente padre es la solución ideal para conciliar diferencias entre esquemas de datos sin violar el principio de no modificar código externo.
 - **Encapsulamiento visual:** A pesar de que el formulario y la tabla poseen temas y paletas cromáticas contrastantes (tonos café vs. tonos verdes), el Shadow DOM garantizó que ninguna regla CSS interfiriera entre ambos componentes.
+
+## 9. Enlaces de entrega y trazabilidad
+
+- **Componente padre integrador:** [`src/view/integracion/integracion.js`](https://github.com/Josema-53/app-lit/blob/taller-integracion/src/view/integracion/integracion.js)
+- **Pull Request de integración:** <https://github.com/Josema-53/app-lit/pull/1>
+- **Issue abierto en el repositorio externo:** <https://github.com/Shairr/Componentes-Lit-G3/issues> (reporte de evaluación y mejoras por Rol 3)
