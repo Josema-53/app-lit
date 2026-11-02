@@ -75,7 +75,7 @@ Evaluación técnica realizada por Diego Alcaciega (Rol 3) sobre el componente `
 |---|---|---|---|---|
 | José María Sandoval | @Josema-53 | Rol 1 · Integración | Creó el repositorio y la rama `taller-integracion`, fijó el commit `c9909e4`, copió el componente externo sin alteraciones, programó el padre `<wc-integracion>` con el patrón Adaptador y abrió el PR. | [Commits de Josema-53](https://github.com/Josema-53/app-lit/commits/taller-integracion?author=Josema-53) |
 | Ian Escobar | @IanEsco632 | Rol 2 · Adaptador y pruebas | Creó `integracion.html` aislado de la barra de navegación, realizó pruebas de flujo con lista vacía y registro de datos, y generó la captura con consola limpia (`Taller_Equipo_N.png`). | [Commits de Ian](https://github.com/Josema-53/app-lit/commits/taller-integracion?author=IanEsco632) |
-| Diego Alcaciega | @Ultimate | Rol 3 y 4 · Revisión y documentación | Evaluó la API, robustez, eventos y Shadow DOM del Equipo 3, redactó el issue para su repositorio, elaboró el diagrama Mermaid de comunicación y documentó el reporte completo en `integracion.md`. | [Commits de Diego](https://github.com/Josema-53/app-lit/commits/taller-integracion?author=Ultimate) |
+| Diego Alcaciega | @Ultimate | Rol 3 y 4 · Revisión y documentación | Evaluó la API, robustez, eventos y Shadow DOM del Equipo 3, redactó el issue para su repositorio, elaboró el diagrama Mermaid de comunicación y documentó el reporte completo en `integracion.md`. | [Commits de Diego](https://github.com/Josema-53/app-lit/commits/main?author=DiegoAlcaciega10) |
 
 ## 8. Evidencias de pruebas y conclusiones
 
