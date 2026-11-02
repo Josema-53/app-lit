@@ -76,3 +76,18 @@ Evaluación técnica realizada por Diego Alcaciega (Rol 3) sobre el componente `
 | José María Sandoval | @Josema-53 | Rol 1 · Integración | Creó el repositorio y la rama `taller-integracion`, fijó el commit `c9909e4`, copió el componente externo sin alteraciones, programó el padre `<wc-integracion>` con el patrón Adaptador y abrió el PR. | [Commits de Josema-53](https://github.com/Josema-53/app-lit/commits/taller-integracion?author=Josema-53) |
 | Ian Escobar | @IanEsco632 | Rol 2 · Adaptador y pruebas | Creó `integracion.html` aislado de la barra de navegación, realizó pruebas de flujo con lista vacía y registro de datos, y generó la captura con consola limpia (`Taller_Equipo_N.png`). | [Commits de Ian](https://github.com/Josema-53/app-lit/commits/taller-integracion?author=IanEsco632) |
 | Diego Alcaciega | @Ultimate | Rol 3 y 4 · Revisión y documentación | Evaluó la API, robustez, eventos y Shadow DOM del Equipo 3, redactó el issue para su repositorio, elaboró el diagrama Mermaid de comunicación y documentó el reporte completo en `integracion.md`. | [Commits de Diego](https://github.com/Josema-53/app-lit/commits/taller-integracion?author=Ultimate) |
+
+## 8. Evidencias de pruebas y conclusiones
+
+### Resultados de la prueba funcional
+Se verificó el funcionamiento integral en `http://localhost:5173/integracion.html`:
+1. **Carga inicial:** La tabla maneja la lista vacía sin arrojar excepciones en consola (`this.lista = []`).
+2. **Envío del formulario:** Se ingresaron los datos de prueba (`Nombre: "Café artesanal"`, `Región: "Loja"`, `Precio: 3.50`).
+3. **Adaptación de datos:** El componente padre `<wc-integracion>` capturó el evento `cafeRegister` y transformó el origen en la categoría `"Café de Loja"`, forzando el precio a tipo `Number`.
+4. **Renderizado en la tabla:** `<wc-table>` detectó la actualización inmutable de la propiedad `.list` y renderizó la nueva fila de inmediato (`$3.50`).
+5. **Consola del navegador:** Sin errores de JavaScript ni advertencias de Shadow DOM, mostrando únicamente el mensaje estándar de Lit en modo desarrollo.
+
+### Conclusiones
+- **Desacoplamiento efectivo:** Se comprobó que el estándar de Web Components y la reactividad de Lit permiten integrar módulos desarrollados por equipos independientes sin compartir estado global ni dependencias cruzadas.
+- **Patrón Adaptador:** La capa de adaptación en el componente padre es la solución ideal para conciliar diferencias entre esquemas de datos sin violar el principio de no modificar código externo.
+- **Encapsulamiento visual:** A pesar de que el formulario y la tabla poseen temas y paletas cromáticas contrastantes (tonos café vs. tonos verdes), el Shadow DOM garantizó que ninguna regla CSS interfiriera entre ambos componentes.
