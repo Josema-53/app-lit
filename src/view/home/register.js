@@ -49,7 +49,7 @@ class Register extends LitElement {
         padding: 20px;
         border: 1px solid #d9d9d9;
         border-radius: 12px;
-        background-color: #f8f9ff;
+        background-color: #f4faf4;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       }
 
@@ -82,21 +82,21 @@ class Register extends LitElement {
         box-sizing: border-box;
         width: 100%;
         padding: 10px 12px;
-        border: 1px solid #b8bfd3;
+        border: 1px solid #a5c9a8;
         border-radius: 6px;
         font-size: 16px;
       }
 
       input:focus {
-        outline: 2px solid #6c63ff;
-        border-color: #6c63ff;
+        outline: 2px solid #43a047;
+        border-color: #43a047;
       }
 
       button {
         padding: 11px 16px;
         border: 0;
         border-radius: 6px;
-        background-color: #3300ff;
+        background-color: #2e7d32;
         color: white;
         font-size: 16px;
         font-weight: bold;
@@ -104,7 +104,7 @@ class Register extends LitElement {
       }
 
       button:hover {
-        background-color: #2500bd;
+        background-color: #1b5e20;
       }
     `;
   }

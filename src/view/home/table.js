@@ -39,17 +39,17 @@ class Table extends LitElement {
             }
 
             th {
-                background-color: #3300ff;
+                background-color: #2e7d32;
                 color: white;
                 font-weight: bold;
             }
 
             tbody tr:nth-child(even) {
-                background-color: #f5f6ff;
+                background-color: #f1f8f1;
             }
 
             tbody tr:hover {
-                background-color: #e5e3ff;
+                background-color: #dcefdc;
             }
 
             tbody tr:last-child td {

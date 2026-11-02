@@ -10,9 +10,9 @@ class Home extends LitElement {
     constructor() {
         super();
          this.studentlist=[
+            {nombre:"Jose", apellido:"Sandoval", edad:21},
             {nombre:"Ian", apellido:"Escobar", edad:20},
-            {nombre:"Juan", apellido:"Perez", edad:30},
-            {nombre:"Maria", apellido:"Gomez", edad:25}
+            {nombre:"Diego", apellido:"Alcaciega", edad:20}
         ];
     }
     addlist(event){
