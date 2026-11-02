@@ -65,13 +65,13 @@ class Table extends LitElement {
 
     render() {
         return html`
-            <h1>Tabla de registros</h1>
+            <h1>Catálogo de bebidas</h1>
           <table>
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Edad</th>
+                    <th>Bebida</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
                 </tr>
             </thead>
             <tbody>
@@ -80,8 +80,8 @@ class Table extends LitElement {
                             return html`
                                 <tr>
                                     <td>${element.nombre}</td>
-                                    <td>${element.apellido}</td>
-                                    <td>${element.edad}</td>
+                                    <td>${element.categoria}</td>
+                                    <td>$${Number(element.precio).toFixed(2)}</td>
                                   </tr>
                             `;
                         })

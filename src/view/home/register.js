@@ -2,39 +2,38 @@ import { LitElement, html, css } from "lit-element";
 class Register extends LitElement {
   static get properties() {
     return {
-      name: { type: String },
-      lastName: { type: String },
-      age: { type: Number },
+      nombre: { type: String },
+      categoria: { type: String },
+      precio: { type: Number },
     };
   }
- 
+
   constructor() {
     super();
-    this.name = this.lastName = this.age = "";
+    this.nombre = this.categoria = this.precio = "";
   }
-  handler(name){
+
+  handler(propiedad) {
     return (e) => {
-        let value = e.target.value;
-        this[name] = value;
-
-
+      let value = e.target.value;
+      this[propiedad] = value;
     };
   }
-  register(event) {
-  event.preventDefault();
-  let data = {
-    name: this.name,
-    lastName: this.lastName,
-    age: this.age,
-  };
-    let options = {
-        detail: data,
-        bubbles: true,
-        composed: true,
-    };
-    this.dispatchEvent(new CustomEvent("registerStudent", options));
 
-}
+  register(event) {
+    event.preventDefault();
+    let data = {
+      nombre: this.nombre,
+      categoria: this.categoria,
+      precio: Number(this.precio),
+    };
+    let options = {
+      detail: data,
+      bubbles: true,
+      composed: true,
+    };
+    this.dispatchEvent(new CustomEvent("registerBebida", options));
+  }
 
   static get styles() {
     return css`
@@ -78,7 +77,8 @@ class Register extends LitElement {
         font-weight: bold;
       }
 
-      input {
+      input,
+      select {
         box-sizing: border-box;
         width: 100%;
         padding: 10px 12px;
@@ -87,7 +87,8 @@ class Register extends LitElement {
         font-size: 16px;
       }
 
-      input:focus {
+      input:focus,
+      select:focus {
         outline: 2px solid #43a047;
         border-color: #43a047;
       }
@@ -113,51 +114,56 @@ class Register extends LitElement {
     return html`
       <form @submit=${this.register}>
         <fieldset>
-          <legend>Registro de usuario</legend>
- 
+          <legend>Registro de bebidas</legend>
+
           <div>
-            <label for="nombre">Nombre:</label>
+            <label for="nombre">Nombre de la bebida:</label>
             <input
-            @input="${this.handler('name')}"
-              .value="${this.name}"
+              @input="${this.handler("nombre")}"
+              .value="${this.nombre}"
               type="text"
               id="nombre"
               name="nombre"
+              placeholder="Ej. Té verde con limón"
               required
             />
           </div>
- 
+
           <div>
-            <label for="apellido">Apellido:</label>
-            <input
-            @input="${this.handler('lastName')}"
-              .value="${this.lastName}"
-              type="text"
-              id="apellido"
-              name="apellido"
+            <label for="categoria">Categoría:</label>
+            <select
+              @change="${this.handler("categoria")}"
+              .value="${this.categoria}"
+              id="categoria"
+              name="categoria"
               required
-            />
+            >
+              <option value="" disabled>Selecciona una categoría</option>
+              <option value="Té">Té</option>
+              <option value="Bebida hidratante">Bebida hidratante</option>
+              <option value="Jugo natural">Jugo natural</option>
+            </select>
           </div>
- 
+
           <div>
-            <label for="edad">Edad:</label>
+            <label for="precio">Precio ($):</label>
             <input
-            @input="${this.handler('age')}"
-              .value="${this.age}"
+              @input="${this.handler("precio")}"
+              .value="${this.precio}"
               type="number"
-              id="edad"
-              name="edad"
+              id="precio"
+              name="precio"
               min="0"
+              step="0.01"
               required
             />
           </div>
- 
-          <button type="submit">Registrar</button>
+
+          <button type="submit">Registrar bebida</button>
         </fieldset>
       </form>
     `;
   }
 }
- 
+
 window.customElements.define("wc-form-register", Register);
- 
